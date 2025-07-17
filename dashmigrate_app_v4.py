@@ -792,7 +792,10 @@ elif etapa_atual == 7:
 
         if st.button("🔄 Voltar ao início"):
             resetar_progresso()
-            st.session_state["etapa_atual"] = 0
+            salvar_etapa_atual(0)
+            st.session_state.clear()
             st.rerun()
+
+
 
 
