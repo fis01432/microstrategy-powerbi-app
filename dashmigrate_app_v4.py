@@ -786,8 +786,14 @@ elif etapa_atual == 7:
 
         st.success("✅ Obrigado pela sua avaliação! Seus dados foram registrados com sucesso.")
 
+        # if st.button("🔄 Voltar ao início"):
+        #     resetar_progresso()
+        #     st.rerun()
+
         if st.button("🔄 Voltar ao início"):
             resetar_progresso()
+            salvar_etapa_atual(0)  # <- importante para garantir
+            st.session_state.clear()  # <- limpa sessão inteira (inclui etapa_atual em memória)
             st.rerun()
 
 
